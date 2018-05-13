@@ -1,11 +1,11 @@
-package aircrafts.aircraftType.planes.passangerAirplanes;
+package com.aircrafts.aircraftType.planes.passangerAirplanes;
 
-import aircrafts.aircraftType.PassengerAircraft;
+import com.aircrafts.aircraftType.planes.PassengerAirplane;
 
 /**
  * Created by OleksiiF on 25.01.2018.
  */
-public class CitationJet extends PassengerAircraft {
+public class CitationJet extends PassengerAirplane {
     public CitationJet(String model) {
         setName("Cessna CitationJet");
         setPassengerQuantity(9);

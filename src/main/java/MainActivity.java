@@ -1,5 +1,4 @@
-import companies.AircraftStoringCo;
-import companies.impl.AircraftStoringCoImpl;
+import com.companies.AircraftStoringCo;
 
 import java.util.Scanner;
 
@@ -10,7 +9,7 @@ public class MainActivity {
 
     public static void main(String[] args) throws Exception {
 
-        AircraftStoringCo aircraftStoringCompany = new AircraftStoringCoImpl();
+        AircraftStoringCo aircraftStoringCompany = new AircraftStoringCo();
         consoleMenu(aircraftStoringCompany);
 
     }

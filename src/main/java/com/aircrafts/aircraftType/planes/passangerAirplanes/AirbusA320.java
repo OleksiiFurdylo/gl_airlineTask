@@ -1,11 +1,11 @@
-package aircrafts.aircraftType.planes.passangerAirplanes;
+package com.aircrafts.aircraftType.planes.passangerAirplanes;
 
-import aircrafts.aircraftType.PassengerAircraft;
+import com.aircrafts.aircraftType.planes.PassengerAirplane;
 
 /**
  * Created by OleksiiF on 25.01.2018.
  */
-public class AirbusA320 extends PassengerAircraft {
+public class AirbusA320 extends PassengerAirplane {
     public AirbusA320(String model) {
         setName("Airbus A320");
         setCargoVolumeInPassenger(37.4);

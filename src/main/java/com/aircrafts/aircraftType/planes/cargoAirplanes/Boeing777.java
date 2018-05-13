@@ -1,11 +1,11 @@
-package aircrafts.aircraftType.planes.cargoAirplanes;
+package com.aircrafts.aircraftType.planes.cargoAirplanes;
 
-import aircrafts.aircraftType.CargoAircraft;
+import com.aircrafts.aircraftType.planes.CargoAirplane;
 
 /**
  * Created by OleksiiF on 25.01.2018.
  */
-public class Boeing777 extends CargoAircraft{
+public class Boeing777 extends CargoAirplane {
     public Boeing777(String model) {
         setName("Boeing 777 Freighter");
         setCargoVolumeInCargoAircraft(636);

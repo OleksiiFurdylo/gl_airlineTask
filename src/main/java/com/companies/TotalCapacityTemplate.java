@@ -1,6 +1,6 @@
-package companies.impl;
+package com.companies;
 
-public class TotalCapacity {
+public class TotalCapacityTemplate {
     private double totalFuelCapacity;
     private double totalCargoVolumeInPassanger;
     private int totalPassengerQuantity;
