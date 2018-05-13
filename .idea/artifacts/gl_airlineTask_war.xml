@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="gl_airlineTask:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="gl_airlineTask-1.0.war">
+      <element id="artifact" artifact-name="gl_airlineTask:war exploded" />
+    </root>
+  </artifact>
+</component>

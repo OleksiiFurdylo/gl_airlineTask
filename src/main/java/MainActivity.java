@@ -1,4 +1,4 @@
-import com.companies.AircraftStoringCo;
+import com.templates.AircraftStoringCo;
 
 import java.util.Scanner;
 

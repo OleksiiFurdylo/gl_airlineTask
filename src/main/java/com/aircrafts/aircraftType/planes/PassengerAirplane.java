@@ -2,8 +2,8 @@ package com.aircrafts.aircraftType.planes;
 
 import com.aircrafts.Aircraft;
 import com.aircrafts.aircraftType.Plane;
-import com.companies.AircraftLoadTemplate;
-import com.companies.TotalCapacityTemplate;
+import com.templates.AircraftLoadTemplate;
+import com.templates.TotalCapacityTemplate;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -45,6 +45,8 @@ public class PassengerAirplane extends Plane {
 
         totalCapacity.setTotalCargoVolumeInPassanger(totalCapacity.getTotalCargoVolumeInPassanger()
                 +((PassengerAirplane) aircraft).getCargoVolumeInPassenger());
+
+        totalCapacity.setTotalFuelCapacity(totalCapacity.getTotalFuelCapacity()+aircraft.getFuelCapacity());
 
         return totalCapacity;
     }

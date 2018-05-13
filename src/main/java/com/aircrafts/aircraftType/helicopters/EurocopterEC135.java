@@ -1,8 +1,8 @@
 package com.aircrafts.aircraftType.helicopters;
 
 import com.aircrafts.Aircraft;
-import com.companies.AircraftLoadTemplate;
-import com.companies.TotalCapacityTemplate;
+import com.templates.AircraftLoadTemplate;
+import com.templates.TotalCapacityTemplate;
 
 /**
  * Created by OleksiiF on 26.01.2018.

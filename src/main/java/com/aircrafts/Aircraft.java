@@ -1,7 +1,7 @@
 package com.aircrafts;
 
-import com.companies.AircraftLoadTemplate;
-import com.companies.TotalCapacityTemplate;
+import com.templates.AircraftLoadTemplate;
+import com.templates.TotalCapacityTemplate;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
