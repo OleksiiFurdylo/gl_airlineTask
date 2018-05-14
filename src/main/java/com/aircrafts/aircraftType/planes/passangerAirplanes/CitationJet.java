@@ -6,7 +6,7 @@ import com.aircrafts.aircraftType.planes.PassengerAirplane;
  * Created by OleksiiF on 25.01.2018.
  */
 public class CitationJet extends PassengerAirplane {
-    public CitationJet(String model) {
+    public CitationJet(String model, int companyId) {
         setName("Cessna CitationJet");
         setPassengerQuantity(9);
         setCargoVolumeInPassenger(10);
@@ -14,6 +14,7 @@ public class CitationJet extends PassengerAirplane {
         setFuelCapacity(1783);
         setSerialNumber(model);
         setFuelConsumption(116);
+        setCompanyId(companyId);
 
 
     }

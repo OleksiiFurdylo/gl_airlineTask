@@ -62,7 +62,7 @@ public class AircraftServiceTest {
 
     @Test
     public void addAircraftAlreadyExisted() throws Exception {
-        Aircraft airbus320 = new AirbusA320("TESTADDEXISTED");
+        Aircraft airbus320 = new AirbusA320("TESTADDEXISTED", 9);
 
         String actual = aircraftService.addAircraft(airbus320);
         String expected = "inserted successfully with id: " +

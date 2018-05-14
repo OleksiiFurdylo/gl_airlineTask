@@ -8,7 +8,7 @@ import com.templates.TotalCapacityTemplate;
  * Created by OleksiiF on 26.01.2018.
  */
 public class EurocopterEC135 extends Aircraft{
-    public EurocopterEC135(String model) {
+    public EurocopterEC135(String model, int companyId) {
         setName("Eurocopter EC135");
         //setPassengerQuantity(6);
         //setCargoVolumeInPassenger(1.1);
@@ -16,6 +16,7 @@ public class EurocopterEC135 extends Aircraft{
         setRange(635);
         setFuelCapacity(633);
         setFuelConsumption(240);
+        setCompanyId(companyId);
     }
 
     @Override

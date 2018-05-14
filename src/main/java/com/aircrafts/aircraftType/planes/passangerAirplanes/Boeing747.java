@@ -6,7 +6,7 @@ import com.aircrafts.aircraftType.planes.PassengerAirplane;
  * Created by OleksiiF on 25.01.2018.
  */
 public class Boeing747 extends PassengerAirplane {
-    public Boeing747(String model) {
+    public Boeing747(String model, int companyId) {
         setName("Boeing 747-8");
         setCargoVolumeInPassenger(184);
         setPassengerQuantity(416);
@@ -14,5 +14,6 @@ public class Boeing747 extends PassengerAirplane {
         setRange(14450);
         setSerialNumber(model);
         setFuelConsumption(13500);
+        setCompanyId(companyId);
     }
 }
