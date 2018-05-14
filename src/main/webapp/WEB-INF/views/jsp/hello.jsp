@@ -43,11 +43,13 @@ ${add_status}
 <br />
 Find aircraft corresponding to the specified range of fuel consumption
 parameters (liters per hour)
-Set min and max consumption:
-<form action = "aircraft/fuel_range" method = "GET" align = "middle">
-    min: <input type = "number" name = "min" required >
+
+<form action = "aircraft/fuel_match" method = "GET" align = "middle">
+    Set min and max consumption:
     <br />
-    max: <input type = "number" name = "max" required />
+    min: <input type = "number" name = "minC" required >
+    <br />
+    max: <input type = "number" name = "maxC" required />
     <br />
     <input type = "submit" value = "Submit" />
 </form>
