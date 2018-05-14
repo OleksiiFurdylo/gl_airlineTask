@@ -83,8 +83,8 @@ public class AircraftController {
     }
 
     @RequestMapping(value = "/fuel_match", method = RequestMethod.GET)
-    public @ResponseBody ArrayList<Aircraft> getAircraftsByFuelConsumptionMatch(@RequestParam("minC") int min,
-                                                                  @RequestParam("maxC") int max){
+    public @ResponseBody ArrayList<Aircraft> getAircraftsByFuelConsumptionMatch(@RequestParam("min") int min,
+                                                                  @RequestParam("max") int max){
         return aircraftService.findAircratfByFuelConsumption(min, max);
     }
 

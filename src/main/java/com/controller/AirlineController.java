@@ -33,8 +33,4 @@ public class AirlineController {
     ArrayList<Aircraft> getSortedListOfAircraftsInCompany(@PathVariable("id") int id){
         return airlineService.sortAircraftsByRange(id);
     }
-
-
-
-
 }

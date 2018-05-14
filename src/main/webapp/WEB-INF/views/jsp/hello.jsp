@@ -47,9 +47,9 @@ parameters (liters per hour)
 <form action = "aircraft/fuel_match" method = "GET" align = "middle">
     Set min and max consumption:
     <br />
-    min: <input type = "number" name = "minC" required >
+    min: <input type = "number" name = "min" required >
     <br />
-    max: <input type = "number" name = "maxC" required />
+    max: <input type = "number" name = "max" required />
     <br />
     <input type = "submit" value = "Submit" />
 </form>
