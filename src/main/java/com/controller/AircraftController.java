@@ -18,10 +18,10 @@ import java.util.ArrayList;
 public class AircraftController {
 
     @Autowired
-    AircraftService aircraftService;
+    private AircraftService aircraftService;
 
     @Autowired
-    AircraftCreationService aircraftCreationService;
+    private AircraftCreationService aircraftCreationService;
 
     @RequestMapping(method = RequestMethod.GET)
     public @ResponseBody

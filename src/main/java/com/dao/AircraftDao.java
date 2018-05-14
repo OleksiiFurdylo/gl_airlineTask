@@ -9,7 +9,7 @@ import java.util.ArrayList;
  */
 public interface AircraftDao {
 
-    String addAircraft(Aircraft aircraft);
+    int addAircraft(Aircraft aircraft);
     void deleteAircraft(int id);
     void editAircraft(Aircraft aircraft);
     Aircraft getAircraft(int id);

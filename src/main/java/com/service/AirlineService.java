@@ -16,7 +16,7 @@ import java.util.Comparator;
 public class AirlineService {
 
     @Autowired
-    AircraftDaoImpl aircraftDao;
+    private AircraftDaoImpl aircraftDao;
 
     public ArrayList<Aircraft> getAllAircraftsInCompany(int companyId){
         return aircraftDao.getAllAircraftsInCompany(companyId);

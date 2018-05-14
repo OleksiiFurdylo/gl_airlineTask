@@ -3,6 +3,7 @@ package com.dao.impl;
 import com.aircrafts.Aircraft;
 import com.aircrafts.aircraftType.planes.CargoAirplane;
 import com.aircrafts.aircraftType.planes.PassengerAirplane;
+import com.exceptions.NoSuchElementInDb;
 import com.templates.AircraftLoadTemplate;
 import com.dao.AircraftDao;
 import com.exceptions.NoSuchAircraftType;
@@ -31,7 +32,7 @@ public class AircraftDaoImpl implements AircraftDao {
 
 
     @Override
-    public String addAircraft(Aircraft aircraft) {
+    public int addAircraft(Aircraft aircraft) {
         int checkId = 0;
 
         try {
@@ -76,7 +77,7 @@ public class AircraftDaoImpl implements AircraftDao {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return "inserted successfully with id: "+checkId+" (if 0 - unsuccessfully)";
+        return checkId;
     }
 
     @Override
@@ -103,7 +104,6 @@ public class AircraftDaoImpl implements AircraftDao {
                     " WHERE serial_number =?");
 
             st.setString(1, aircraft.getName());
-            System.out.println("---------------"+ aircraft.getName()+" in dao");
             st.setDouble(2, aircraftLoad.getCargoVolume());
             if(aircraftLoad.getPassengerQuantity() == 0) {
                 st.setNull(3, 0);
@@ -149,15 +149,18 @@ public class AircraftDaoImpl implements AircraftDao {
             e.printStackTrace();
         } catch (NoSuchAircraftType noSuchAircraftType) {
             noSuchAircraftType.printStackTrace();
+        } catch (NoSuchElementInDb noSuchElementInDb) {
+            noSuchElementInDb.printStackTrace();
         }
 
         return airplane;
     }
 
-    private Aircraft chooseAndFillAircraft(ResultSet rs) throws SQLException, NoSuchAircraftType {
+    private Aircraft chooseAndFillAircraft(ResultSet rs) throws SQLException, NoSuchAircraftType, NoSuchElementInDb {
 
         Aircraft airplane;
 
+        if(rs.isClosed()==true){throw new NoSuchElementInDb("element no longer exists");}
         if(rs.getString("type").equals("Passenger Aircraft")){
             airplane = new PassengerAirplane();
             return fillAircraftDetails(airplane, rs);
@@ -197,7 +200,7 @@ public class AircraftDaoImpl implements AircraftDao {
         Aircraft airplane = null;
 
         try {
-            PreparedStatement st = conn.prepareStatement("SELECT * FROM airplane WHERE serial_number="+serialNumber);
+            PreparedStatement st = conn.prepareStatement("SELECT * FROM airplane WHERE serial_number = \""+serialNumber+"\"");
             ResultSet rs = st.executeQuery();
 
             airplane = chooseAndFillAircraft(rs);
@@ -209,6 +212,8 @@ public class AircraftDaoImpl implements AircraftDao {
             e.printStackTrace();
         } catch (NoSuchAircraftType noSuchAircraftType) {
             noSuchAircraftType.printStackTrace();
+        } catch (NoSuchElementInDb noSuchElementInDb) {
+            noSuchElementInDb.printStackTrace();
         }
 
         return airplane;
@@ -230,6 +235,8 @@ public class AircraftDaoImpl implements AircraftDao {
             e.printStackTrace();
         } catch (NoSuchAircraftType noSuchAircraftType) {
             noSuchAircraftType.printStackTrace();
+        } catch (NoSuchElementInDb noSuchElementInDb) {
+            noSuchElementInDb.printStackTrace();
         }
 
         return aircrafts;
@@ -251,6 +258,8 @@ public class AircraftDaoImpl implements AircraftDao {
             e.printStackTrace();
         } catch (NoSuchAircraftType noSuchAircraftType) {
             noSuchAircraftType.printStackTrace();
+        } catch (NoSuchElementInDb noSuchElementInDb) {
+            noSuchElementInDb.printStackTrace();
         }
 
         return aircrafts;

@@ -20,7 +20,7 @@ import java.util.ArrayList;
 public class AirlineController {
 
     @Autowired
-    AirlineService airlineService;
+    private AirlineService airlineService;
 
     @RequestMapping(value = "/{id}/capacity", method = RequestMethod.GET)
     public @ResponseBody

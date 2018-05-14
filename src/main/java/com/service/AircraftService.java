@@ -15,10 +15,10 @@ import java.util.ArrayList;
 public class AircraftService {
 
     @Autowired
-    AircraftDaoImpl aircraftDao;
+    private AircraftDaoImpl aircraftDao;
 
     public String addAircraft(Aircraft aircraft){
-        return aircraftDao.addAircraft(aircraft);
+        return "inserted successfully with id: " + aircraftDao.addAircraft(aircraft)+" (if 0 - unsuccessfully)";
     }
 
     public void deleteAircraft(int aircraftId){
