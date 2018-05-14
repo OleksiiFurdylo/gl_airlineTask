@@ -93,7 +93,7 @@ public class AircraftDaoImplTest {
     @Test
     public void getAllAircrafts() throws Exception {
         int actualSize = aircraftDao.getAllAircrafts().size();
-        int expectedSize = 6;
+        int expectedSize = 7;
 
         Assert.assertEquals(actualSize, expectedSize);
     }

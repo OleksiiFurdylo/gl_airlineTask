@@ -3,6 +3,7 @@ package com.service;
 import com.aircrafts.Aircraft;
 import com.aircrafts.aircraftType.planes.CargoAirplane;
 import com.aircrafts.aircraftType.planes.PassengerAirplane;
+import com.aircrafts.aircraftType.planes.passangerAirplanes.AirbusA320;
 import com.dao.AircraftDao;
 import com.dao.impl.AircraftDaoImpl;
 import com.templates.AircraftLoadTemplate;
@@ -60,9 +61,20 @@ public class AircraftServiceTest {
     }
 
     @Test
+    public void addAircraftAlreadyExisted() throws Exception {
+        Aircraft airbus320 = new AirbusA320("TESTADDEXISTED");
+
+        String actual = aircraftService.addAircraft(airbus320);
+        String expected = "inserted successfully with id: " +
+                aircraftDao.getAircraft("TESTADDEXISTED").getId()+" (if 0 - unsuccessfully)";
+
+        Assert.assertEquals(actual, expected);
+    }
+
+    @Test
     public void findAircratfByFuelConsumption() throws Exception {
         int actual = aircraftService.findAircratfByFuelConsumption(500, 5000).size();
-        int expected = 2;
+        int expected = 3;
 
         Assert.assertEquals(expected, actual);
     }
