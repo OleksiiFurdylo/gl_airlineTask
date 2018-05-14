@@ -2,6 +2,7 @@ package com.service;
 
 import com.aircrafts.Aircraft;
 import com.aircrafts.aircraftType.planes.PassengerAirplane;
+import com.dao.AircraftDao;
 import com.dao.impl.AircraftDaoImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,7 +16,7 @@ import java.util.ArrayList;
 public class AircraftService {
 
     @Autowired
-    private AircraftDaoImpl aircraftDao;
+    private AircraftDao aircraftDao;
 
     public String addAircraft(Aircraft aircraft){
         return "inserted successfully with id: " + aircraftDao.addAircraft(aircraft)+" (if 0 - unsuccessfully)";

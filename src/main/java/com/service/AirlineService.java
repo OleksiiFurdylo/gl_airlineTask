@@ -1,6 +1,7 @@
 package com.service;
 
 import com.aircrafts.Aircraft;
+import com.dao.AircraftDao;
 import com.templates.TotalCapacityTemplate;
 import com.dao.impl.AircraftDaoImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,7 @@ import java.util.Comparator;
 public class AirlineService {
 
     @Autowired
-    private AircraftDaoImpl aircraftDao;
+    private AircraftDao aircraftDao;
 
     public ArrayList<Aircraft> getAllAircraftsInCompany(int companyId){
         return aircraftDao.getAllAircraftsInCompany(companyId);
