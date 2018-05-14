@@ -2,7 +2,7 @@ Airline Storing company application
 
 Build with Maven
 
-Author: Oleksii Furdylo furdilik@ukr.net
+Author: Oleksii Furdylo furdilik@gmail.com
 
 Instructions for launching the application:
 Clone or download repository
